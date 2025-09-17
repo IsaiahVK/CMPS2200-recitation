@@ -112,6 +112,7 @@ a) Describe, in your own words, what the `combine` method is doing and
 what it returns.
 
 .  The combine method is taking two halves of a list, combining them, and counting the amount of numerical jumps (aka disagreements).
+
 .  It returns the combined list, along with the amount of disagreements contained between the two.
 .  
 .  
@@ -124,6 +125,7 @@ what it returns.
 b) Write the work recurrence formula for `num_disagreements_fast`. Please explain how do you have this.
 
 .  $W(n) = 2W(n/2) + n$
+
 .  The work is split into left and right halves, and slicing is required.
 .  
 .  
@@ -133,6 +135,7 @@ b) Write the work recurrence formula for `num_disagreements_fast`. Please explai
 c) Solve this recurrence using any method you like. Please explain how do you have this.
 
 .  $O(nlogn)
+
 .  There are $log_2(n)$ levels of the tree, and the cost of each layer is n.
 .  
 .  
@@ -150,6 +153,7 @@ d) Assuming that your recursive calls to `num_disagreements_fast` are
 done in parallel, write the span recurrence for your algorithm. Please explain how do you have this.
 
 .  $S(n) = S(n/2) + O(n)$
+
 .  Because layers are split, span is divided by 2, and each layer requires $O(n)$ work done in sequential.
 .  
 .  
@@ -165,6 +169,7 @@ done in parallel, write the span recurrence for your algorithm. Please explain h
 e) Solve this recurrence using any method you like. Please explain how do you have this.
 
 .  $O(n)$
+
 .  Because the span is linear, it must belong to $O(n)$
 .  
 .  
@@ -181,6 +186,7 @@ f) If `ranks` is a list of size n, Netflix says it will give you
 lg(n) processors to run your algorithm in parallel. What is the
 upper bound on the runtime of this parallel implementation? (Hint: assume a Greedy
 Scheduler). Please explain how do you have this.
+
 .  $O(n)$
 .  $T_{logn} <= (O(nlogn))/(logn) + O(n)
 .  $T_{logn} \in O(n)$
