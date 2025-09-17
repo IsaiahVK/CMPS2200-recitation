@@ -188,7 +188,9 @@ upper bound on the runtime of this parallel implementation? (Hint: assume a Gree
 Scheduler). Please explain how do you have this.
 
 .  $O(n)$
+
 .  $T_{logn} <= (O(nlogn))/(logn) + O(n)
+
 .  $T_{logn} \in O(n)$
 .  
 .  
