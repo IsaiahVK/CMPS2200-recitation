@@ -111,7 +111,7 @@ following:
 a) Describe, in your own words, what the `combine` method is doing and
 what it returns.
 
-.  The combine method is taking two halves of a list, combining them, and counting the amount of numerical jumps (aka disagreements).
+.  The combine method is taking two halves of a sorted list, combining them, and counting the amount of occurences where the right list element is smaller than the left with all remaining elements in the list (aka disagreements).
 
 .  It returns the combined list, along with the amount of disagreements contained between the two.
 .  
@@ -126,7 +126,7 @@ b) Write the work recurrence formula for `num_disagreements_fast`. Please explai
 
 .  $W(n) = 2W(n/2) + n$
 
-.  The work is split into left and right halves, and slicing is required.
+.  The work is split into left and right halves, and slicing and combining is required.
 .  
 .  
 .  
@@ -170,11 +170,11 @@ e) Solve this recurrence using any method you like. Please explain how do you ha
 
 .  $O(n)$
 
-.  Because the span is linear, it must belong to $O(n)$
+.  $S(n) = S(n/2) + cn$
 .  
+.  $S(n) = (S(n/4) + cn/2) + cn$
 .  
-.  
-.  
+.  This is a geometric series that converges to 2cn.
 .  
 .  
 .  
