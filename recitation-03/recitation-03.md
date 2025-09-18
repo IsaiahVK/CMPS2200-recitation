@@ -134,7 +134,7 @@ b) Write the work recurrence formula for `num_disagreements_fast`. Please explai
 
 c) Solve this recurrence using any method you like. Please explain how do you have this.
 
-.  $O(nlogn)
+.  $O(nlogn)$
 
 .  There are $log_2(n)$ levels of the tree, and the cost of each layer is n.
 .  
