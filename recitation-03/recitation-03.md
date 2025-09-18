@@ -126,7 +126,7 @@ b) Write the work recurrence formula for `num_disagreements_fast`. Please explai
 
 .  $W(n) = 2W(n/2) + n$
 
-.  The work is split into left and right halves, and slicing and combining is required.
+.  The work is split into left and right halves, both of n/2 size. This split is carried out through slicing, which is known O(n). There are 2 slices of size n/2, adding the extra n. The O(1) combining operations are obmitted from the recurrence formula.
 .  
 .  
 .  
@@ -136,7 +136,7 @@ c) Solve this recurrence using any method you like. Please explain how do you ha
 
 .  $O(nlogn)$
 
-.  There are $log_2(n)$ levels of the tree, and the cost of each layer is n.
+.  The first level is one node of size n with an added n for the slicing. The second level is two node of size n, each with an added n/2 for the slicing. Therefore, each level has a total of n added for the slicing. We know the number of nodes is $2^i$ = n at the bottom level. Therefore i= log2 n, making the asymptote n * log2 n times.
 .  
 .  
 .  
@@ -154,7 +154,7 @@ done in parallel, write the span recurrence for your algorithm. Please explain h
 
 .  $S(n) = S(n/2) + O(n)$
 
-.  Because layers are split, span is divided by 2, and each layer requires $O(n)$ work done in sequential.
+.  Because layers are split, span is divided by 2, and each layer requires $O(n)$ work done in sequential for the slicing.
 .  
 .  
 .  
